@@ -2,7 +2,7 @@ require 'new_relic/agent/instrumentation/controller_instrumentation'
 
 DependencyDetection.defer do
   depends_on do
-    defined?(::Sinatra) && defined?(::Sinatra::Base)
+    defined?(::Sinatra) && defined?(::Sinatra::Base) && !defined?(Padrino)
   end
 
   executes do
